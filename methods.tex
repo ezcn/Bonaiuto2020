@@ -32,6 +32,7 @@ Beside the Agilent software XXX , data were analyzed using custom R scripting (F
 
 \subsection*{DNA sequencing and sequence analysis}
 Whole-genome sequencing of the embryonic DNA was done through a service provider (Macrogen s.r.l). In particular, libraries for sequencing were prepared using the Illumina TruSeq DNA PCR-free Library (insert size 350bp) and samples were sequenced at 30X mapped (~110Gb) 150bp PE on HiSeqX. Data were released in as fastq files. -- Exome sequencing of the women XXXXXX
+%SILVIA We obtained XX GB of data per individual, with.95.8 of the genome covered more than XX times.
 
 Reads in the fastq file of both embryo and women sequence data were aligned against the reference genome GRChg38.p12 \cite{rosenbloom2015ucsc} using \textsc{bwa}\cite(Li 2009){} and \textsc{samtools}\cite{}. Variant calling was done using \textsc{freebayes} \cite{garrison2012haplotype}. The resulting vcf files were refined in three steps: (i) \textsc{vcffilter} \cite{vcflib} was used to filter variants for quality score>20, leaving only variants with 99\% accuracy of genotype call; (ii) \textsc{vt} \cite{tan2015unified} was used to normalize variants; (iii) \textsc{vt}  \cite{tan2015unified} was used to deconstruct multiallelic variants. Refined vcf files were compressed and indexed using samtools \cite{}. Variants were annotated for functional effects and allele frequency in other populations using Variant Effect Predictor (VEP, McLaren2016).  
 
@@ -40,8 +41,11 @@ The \gp pipeline for variant prioritization is written in Python and the code is
 The computational work has been executed on the IT resources of the ReCaS-Bari data center, which have been made available by two projects financed by the MIUR (Italian Ministry for Education, University and Re-search) in the "PON Ricerca e Competitività 2007-2013" Program: ReCaS (Azione I - Interventi di rafforzamento strutturale, PONa3\_00052, Avviso 254/Ric) and PRISMA (Asse II - Sostegno all'innovazione, PON04a2\_A)"
 
 
+%Variant calling, phasing and annotation 
+%Raw paired end sequencing data was mapped on the reference genome  GRCh38 using BWA (Li 2009) and variant calling was done using Freebayes (Garrison 2012), discovering on average 436k variants per sample with Phred-scaled quality scores >20. Information on functional annotations and Combined Annotation Dependent Depletion (CADD) for variable sites was obtained using Variant Effect Predictor (McLaren 2016). Phasing was done using Beagle 5.1 (Browning 2018) under standard parameters.  
+
+
 \subsection*{PCA Analysis, Reactome} 
 %Approximately 15,000 autosomal exonic SNPs from HapMapPhase 325were used to conduct PCA analysis. SNPs were prunedusing PLINK26based on LD (variance inflation factor thresholdof 2), and only common variants (MAF>5\%) were used in thePCA analysis. PCA outlier analyses were performed by projectingthe case samples onto HapMap3 samples using EIGENSOFT
-
 
 
